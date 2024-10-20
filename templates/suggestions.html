@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block title %}Suggestions{% endblock %}
+
+{% block main %}
+<div class="container mt-5">
+    <h1 class="text-center poppins">College Recommendations</h1>
+
+    {% if clg_list | length > 0 %}
+        <p class="text-center">Total Results: {{ clg_list | length }}</p>
+
+        <div class="table-responsive" style="max-height: 500px; overflow-y: auto;">
+            <table class="table table-hover table-bordered table-sm">
+                <thead class="thead-dark sticky-header">  <!-- Added sticky-header class -->
+                    <tr>
+                        {% for feature in features %}
+                        {% if feature not in ["Total Enrollment", "Campus Size", "State", "Country"] %}
+                        <th>{{ feature }}</th>
+                        {% endif %}
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in clg_list %}
+                    <tr class="clickable-row" data-target="#collapse-{{ loop.index }}">
+                        {% for col, feature in zip(row, features) %}
+                        {% if feature not in ["Total Enrollment", "Campus Size", "State", "Country"] %}
+                        <td>{{ col }}</td>
+                        {% endif %}
+                        {% endfor %}
+                    </tr>
+                    <tr id="collapse-{{ loop.index }}" class="collapse">
+                        <td colspan="{{ features | length - 4 }}">
+                            <div class="card card-body">
+                                <strong>Details:</strong><br>
+                                {% for col, feature in zip(row, features) %}
+                                    <strong>{{ feature }}:</strong> {{ col }}<br>
+                                {% endfor %}
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <p class="text-center">No results found. Please try again with different criteria.</p>
+    {% endif %}
+</div>
+
+<script>
+    $(document).ready(function() {
+        let collapseTimeout;
+
+        $('.clickable-row').on('click', function() {
+            var target = $(this).data('target');
+
+            // Close other open rows
+            $('.collapse').not(target).collapse('hide');
+
+            // Toggle the clicked row's details section
+            $(target).collapse('toggle');
+
+            // Clear any previous timeout to prevent auto-closing unintended rows
+            clearTimeout(collapseTimeout);
+
+            // Set a timeout to close the details section after 5 seconds
+            collapseTimeout = setTimeout(function() {
+                $(target).collapse('hide');
+            }, 50000);
+        });
+
+        // Prevent collapse on hover
+        $('.clickable-row').hover(function() {
+            return false;
+        });
+    });
+</script>
+
+<style>
+    /* CSS to make the header sticky */
+    .sticky-header {
+        position: sticky;
+        top: 0;
+        z-index: 10; /* Ensure the header is above other content */
+    }
+</style>
+{% endblock %}

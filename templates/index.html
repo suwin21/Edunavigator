@@ -1,0 +1,219 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Homepage
+{% endblock %}
+
+{% block main %}
+<!-- Header -->
+<header id="header" class="header">
+    <div class="header-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-xl-5">
+                    <div class="text-container">
+                        <h1>College Recommendation System for Engineering Admission</h1>
+                        <p class="p-large poppins">To simplify the process of finding colleges in Tamil Nadu, this project helps students efficiently identify suitable engineering colleges based on their TNEA TNHSC cut-off scores.</p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-6 col-xl-7">
+                    <div class="image-container">
+                        <div class="img-wrapper">
+                            <img class="img-fluid main-img" src="static/main.PNG" alt="alternative">
+                        </div> <!-- end of img-wrapper -->
+                    </div> <!-- end of image-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of header-content -->
+</header> <!-- end of header -->
+<svg class="header-frame" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1920 310"><defs><style>.cls-1{fill:#5f4def;}</style></defs><title>header-frame</title><path class="cls-1" d="M0,283.054c22.75,12.98,53.1,15.2,70.635,14.808,92.115-2.077,238.3-79.9,354.895-79.938,59.97-.019,106.17,18.059,141.58,34,47.778,21.511,47.778,21.511,90,38.938,28.418,11.731,85.344,26.169,152.992,17.971,68.127-8.255,115.933-34.963,166.492-67.393,37.467-24.032,148.6-112.008,171.753-127.963,27.951-19.26,87.771-81.155,180.71-89.341,72.016-6.343,105.479,12.388,157.434,35.467,69.73,30.976,168.93,92.28,256.514,89.405,100.992-3.315,140.276-41.7,177-64.9V0.24H0V283.054Z"/></svg>
+<!-- end of header -->
+
+<!-- Description -->
+<div class="cards-1  poppins">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="above-heading">DESCRIPTION</div>
+                <h2 class="h2-heading">Searching Automation Will Bring More Robust Options</h2>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+        <div class="row">
+            <div class="col-lg-12">
+
+                <!-- Card -->
+                <div class="card">
+                    <div class="card-image">
+                        <img class="img-fluid" src="static/university.png" alt="alternative">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Pre-eminent Universities</h4>
+                        <p>Finest Universities you can get according to obtained marks of TNHSC.</p>
+                    </div>
+                </div>
+                <!-- end of card -->
+
+                <!-- Card -->
+                <div class="card">
+                    <div class="card-image">
+                        <br><br>
+                        <img class="img-fluid" src="static/fields.png" alt="alternative">
+                        <br><br>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Choice of Fields</h4>
+                        <p>Provides undistractive lists of any field/fields by eliminating information overload.</p>
+                    </div>
+                </div>
+                <!-- end of card -->
+
+                <!-- Card -->
+                <div class="card">
+                    <div class="card-image">
+                        <img class="img-fluid" src="static/location.jpeg" alt="alternative">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Fees Filtering</h4>
+                           <p>Filter suggested colleges based on fee range and cutoff marks.</p>
+                    </div>
+                </div>
+                <!-- end of card -->
+
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of cards-1 -->
+<!-- end of description -->
+
+<!-- Abstract -->
+<div id="features" class="tabs">
+    <div class="container">
+        <div class="row poppins">
+            <div class="col-lg-12">
+                <div class="above-heading poppins">ABSTRACT</div>
+                <h2 class="h2-heading poppins">How can Edunavigator help you?</h2>
+                <p class="p-heading poppins">Every year, lakhs of junior college students in Tamil Nadu pass their H.S.C and seek admission to engineering colleges, during the admission process, students must select a minimum number of colleges where they have a chance of gaining entry, consequently, candidates need to compile a list of colleges they wish to apply to, this task often involves extensive manual searching and comparing various college prospects, the goal of this project was to automate the generation of college lists specifically for Tamil Nadu engineering colleges to minimize manual effort by developing a system that can effectively and efficiently generate a list of eligible colleges based on the TNEA TNHSC cut-off and the official database provided by the government, recommendation systems address the problem of <i>Information Overload</i> by helping candidates navigate through large volumes of data.</p>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div>
+</div>
+
+<!-- Pricing -->
+<div id="pricing" class="cards-2 poppins">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="above-heading">Features</div>
+                <h2 class="h2-heading">Criteria for Shortlisting Colleges</h2>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+        <div class="row">
+            <div class="col-lg-12">
+
+                <!-- Card-->
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">Filter with</div>
+                        <div class="price"><span class="value">Marks</span></div>
+                        <div class="divider"></div>
+                        <ul class="list-unstyled li-space-lg">
+                            <li class="media">
+                                <i class="fas fa-check"></i><div class="media-body">Accepts TNHSC Marks</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-check"></i><div class="media-body">Suggests Colleges Less Than Threshold</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-check"></i><div class="media-body">Can Input the exact score</div>
+                            </li>
+                
+                        </ul>
+                    </div>
+                </div> <!-- end of card -->
+                <!-- end of card -->
+
+                <!-- Card-->
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">Filter with</div>
+                        <div class="price"><span class="value">Branch</span></div>
+                        <div class="divider"></div>
+                        <ul class="list-unstyled li-space-lg">
+                            <li class="media">
+                                <i class="fas fa-check"></i><div class="media-body">All Colleges (Around 500 Colleges of Tamil Nadu)</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-check"></i><div class="media-body">Only Top Branches</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-check"></i><div class="media-body">Multiple Branch Input</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div> <!-- end of card -->
+                <!-- end of card -->
+
+                <!-- Card-->
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">Filter with</div>
+                        <div class="price"><span class="value">Location</span></div>
+                        
+                        <div class="divider"></div>
+                        <ul class="list-unstyled li-space-lg">
+                            <li class="media">
+                                <i class="fas fa-check"></i><div class="media-body">List will include major cities</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-check"></i><div class="media-body">List has some towns too</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-check"></i><div class="media-body">scroll option available</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div> <!-- end of card -->
+                <!-- end of card -->
+
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of pricing -->
+
+<!-- Contact -->
+<div id="contact" class="form">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="above-heading">Contact Us</div>
+                <h2 class="h2-heading">Have Any Questions?</h2>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <form id="contact-form" action="https://formspree.io/f/meoqoqpr" method="POST">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </div>
+                </form>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of contact -->
+
+
+
+</body>
+</html>
+
+{% endblock %}

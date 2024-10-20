@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="/static/favicon.ico" rel="icon">
+    <link href="/static/styles.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" crossorigin="anonymous">
+    <title>{% block title %} Edunavigator - College Admission Helper {% endblock %}</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top py-3">
+            <div class="container">
+                <a href="/" class="navbar-brand text-uppercase font-weight-bold">Edunavigator</a>
+                <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" class="navbar-toggler">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active"><a href="/" class="nav-link text-uppercase font-weight-bold">HOME</a></li>
+                        <li class="nav-item"><a href="/apply" class="nav-link text-uppercase font-weight-bold">APPLY</a></li>
+                        <li class="nav-item"><a href="/faqs" class="nav-link text-uppercase font-weight-bold">FAQS</a></li>
+                        <li class="nav-item"><a href="/chat" class="nav-link text-uppercase font-weight-bold">CHATBOT</a></li> <!-- Link to Chatbot -->
+                        <li class="nav-item"><a href="#contactModal" class="nav-link text-uppercase font-weight-bold" data-toggle="modal">CONTACT</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {% block main %}{% endblock %}
+    </main>
+
+    <footer class="footer poppins">
+        <div class="container bottom_border">
+            <div class="row">
+                <div class="col-sm-4 col-md col-sm-4 col-12 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2">About Us</h5>
+                    <p>Suwin Kumar and Mithilesh.<br>Students at Amrita University.<br>Full stack developers.</p>
+                    <p><i class="fa fa-location-arrow"></i> 337/1 A, Vallal RCK Nagar, Vengal, Tamil Nadu 601103. </p>
+                    <p><i class="fa fa-phone"></i> +91-9363259321, +91-8754736677 </p>
+                    <p><i class="fa fa-envelope"></i> suwincap@gmail.com </p>
+                    <p><i class="fa fa-envelope"></i> Mithilesh@gmail.com </p>
+                </div>
+
+                <div class="col-sm-4 col-md col-6 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2">Official Links</h5>
+                    <ul class="footer_ul_amrc">
+                        <li><a href="https://www.tamilnadustateboard.org/" target="_blank">Tamil Nadu Board</a></li>
+                        <li><a href="https://www.tneaonline.org/" target="_blank">TNEA</a></li>
+                        <li><a href="https://www.tn-mbamca.com/" target="_blank">MBA/MCA Counseling</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-4 col-md col-6 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2">External References</h5>
+                    <ul class="footer_ul_amrc">
+                        <li><a href="https://www.careers360.com/compare-colleges" target="_blank">Compare Colleges</a></li>
+                        <li><a href="https://www.careers360.com/colleges/reviews" target="_blank">College Reviews</a></li>
+                        <li><a href="https://www.careers360.com/application-forms/colleges" target="_blank">College Application</a></li>
+                        <li><a href="https://engineering.careers360.com/colleges/ranking" target="_blank">Top Engineering Colleges</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-4 col-md col-12 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2">Explore</h5>
+                    <ul class="footer_ul_amrc">
+                        <li><a href="/">Home Page</a></li>
+                        <li><a href="/apply">Apply Page</a></li>
+                        <li><a href="/faqs">FAQs Page</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <p class="text-center poppins">Copyright @2024 | Designed by Suwin Kumar and Mithilesh</p>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">Contact Us</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="https://formspree.io/f/meoqoqpr" method="POST">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            // Ensure the modal does not interfere with the normal operation of the page
+            $('#contactModal').modal({ show: false });
+        });
+    </script>
+</body>
+
+</html>

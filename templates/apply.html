@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block title %}Apply{% endblock %}
+
+{% block main %}
+<div class="container mt-5">
+    <h1 class="text-center poppins">Apply for College Recommendations</h1>
+
+    <form method="POST" action="/apply">
+        <div class="form-group">
+            <label for="city">City:</label>
+            <select id="city" name="city" class="form-control">
+                {% for city in cities %}
+                <option value="{{ city }}">{{ city }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="college_type">College Type:</label>
+            <select id="college_type" name="college_type" class="form-control">
+                {% for type in college_types %}
+                <option value="{{ type }}">{{ type }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="fees">Fees Range:</label>
+            <select id="fees" name="fees" class="form-control">
+                {% for fees in fees_list %}
+                <option value="{{ fees }}">{{ fees }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="cutoff">Cutoff Score:</label>
+            <input type="number" id="cutoff" name="cutoff" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="branch">Branch:</label>
+            <select id="branch" name="branch" class="form-control">
+                {% for branch in branches %}
+                <option value="{{ branch }}">{{ branch }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="courses">Courses (Multi-select):</label>
+            <select id="courses" name="courses" class="form-control" multiple>
+                {% for course in courses %}
+                <option value="{{ course }}">{{ course }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}
